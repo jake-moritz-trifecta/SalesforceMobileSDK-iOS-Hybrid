@@ -170,6 +170,8 @@ static NSString * const kHTTP = @"http";
         NSAssert(_hybridViewConfig != nil, @"_hybridViewConfig was not properly initialized. See output log for errors.");
         self.startPage = _hybridViewConfig.startPage;
 
+        [SalesforceSDKManager sharedManager].useWebServerAuthentication = NO;
+
         // Setup global stores and syncs defined in static configs
         [[SalesforceHybridSDKManager sharedManager] setupGlobalStoreFromDefaultConfig];
         [[SalesforceHybridSDKManager sharedManager] setupGlobalSyncsFromDefaultConfig];
